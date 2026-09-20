@@ -1,8 +1,8 @@
 backend:
   image:
-    repository: aspecta-backend
+    repository: ghcr.io/infurox/aspecta-backend
     tag: dev
 frontend:
   image:
-    repository: aspecta-frontend
+    repository: ghcr.io/infurox/aspecta-frontend
     tag: dev
