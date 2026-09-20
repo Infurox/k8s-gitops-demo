@@ -275,7 +275,7 @@ bootstrap/            ArgoCD Application, jediná vec nasadzovaná ručne
 .github/workflows/    CI pipeline
 ```
 
-## Vedomé zjednodušenia
+## Zjednodušenia
 
 Platformové komponenty (ArgoCD, ingress-nginx, metrics-server, monitoring stack)
 sú nasadené imperatívne ako súčasť bootstrapu klastra, pretože ArgoCD musí
@@ -284,7 +284,7 @@ deklarované v tomto repozitári a nasadzuje ho ArgoCD.
 
 Secret je v repozitári v čistom texte. Base64 v Kubernetes nie je šifrovanie,
 je to len kódovanie. V reálnom nasadení by sa použil sealed-secrets,
-external-secrets alebo Vault. Pre demo je to vedomé zjednodušenie.
+external-secrets alebo Vault.
 
 Šablóny chartu majú namespace uvedený natvrdo namiesto `.Release.Namespace`.
 Chart sa preto nasadzuje len do namespace `aspecta`.
