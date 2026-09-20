@@ -12,7 +12,7 @@ app = FastAPI(title=APP_NAME)
 ITEMS = [
     {"id": 1, "name": "alpha"},
     {"id": 2, "name": "beta"},
-    {"id": 3, "name": "gamma"},
+    {"id": 3, "name": "delta"},
 ]
 
 
