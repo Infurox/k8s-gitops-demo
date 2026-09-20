@@ -169,6 +169,10 @@ itself. As a second safeguard, its message contains `[skip ci]`.
 The tag is the commit hash, not `latest`. Every build has an unambiguous tag, a
 revert is a return to a previous tag, and the contents of an image never change.
 
+A second workflow, `.github/workflows/chart.yaml`, runs `helm lint` and
+`helm template` on every change under `chart/**`, including on pull requests, so
+a broken chart fails in CI instead of as a refused ArgoCD sync.
+
 ## GitOps
 
 ArgoCD pulls changes from Git itself and pushes nothing into the cluster. That is
