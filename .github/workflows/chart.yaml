@@ -26,6 +26,6 @@ jobs:
 
       - name: Summary
         run: |
-          echo "VRendered objects:"
+          echo "Rendered objects:"
           grep -c '^kind:' /tmp/rendered.yaml
           grep '^kind:' /tmp/rendered.yaml | sort | uniq -c
