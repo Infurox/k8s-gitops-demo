@@ -1,0 +1,32 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: aspecta
+  namespace: aspecta
+  labels:
+    release: monitoring
+spec:
+  groups:
+    - name: aspecta.rules
+      rules:
+        - alert: BackendDown
+          expr: up{namespace="aspecta", service="backend"} == 0
+          for: 2m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Backend pod {{`{{ $labels.pod }}`}} neodpoveda na scrape"
+        - alert: BackendPodRestarting
+          expr: increase(kube_pod_container_status_restarts_total{namespace="aspecta"}[10m]) > 2
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Pod {{`{{ $labels.pod }}`}} sa opakovane restartuje"
+        - alert: BackendMaxedOut
+          expr: kube_horizontalpodautoscaler_status_current_replicas{namespace="aspecta"} >= kube_horizontalpodautoscaler_spec_max_replicas{namespace="aspecta"}
+          for: 10m
+          labels:
+            severity: warning
+          annotations:
+            summary: "HPA {{`{{ $labels.horizontalpodautoscaler }}`}} bezi na maxime replik"

@@ -1,0 +1,8 @@
+backend:
+  image:
+    repository: aspecta-backend
+    tag: dev
+frontend:
+  image:
+    repository: aspecta-frontend
+    tag: dev

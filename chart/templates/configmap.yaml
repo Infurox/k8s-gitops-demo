@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: aspecta
+data:
+  APP_NAME: "Demo aplikacia"
+  APP_ENV: "minikube"

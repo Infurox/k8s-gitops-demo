@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <title>Demo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 3rem auto; max-width: 40rem; }
+    li { padding: 0.3rem 0; }
+    .err { color: #b00; }
+  </style>
+</head>
+<body>
+  <h1>Demo aplikácia</h1>
+  <p id="status">Načítavam...</p>
+  <ul id="items"></ul>
+
+  <script>
+    fetch('/api/items')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('status').textContent = 'Backend odpovedá.';
+        const ul = document.getElementById('items');
+        data.items.forEach(i => {
+          const li = document.createElement('li');
+          li.textContent = i.id + ': ' + i.name;
+          ul.appendChild(li);
+        });
+      })
+      .catch(e => {
+        const s = document.getElementById('status');
+        s.textContent = 'Backend nedostupný: ' + e;
+        s.className = 'err';
+      });
+  </script>
+</body>
+</html>
