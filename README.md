@@ -1,4 +1,4 @@
-# Cloud native environment on Kubernetes
+# Deployment of web application on Kubernetes
 
 A demo web application (frontend and backend) deployed on Kubernetes with a focus
 on scalability, security, monitoring and automated deployment via GitOps.
