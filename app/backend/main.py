@@ -10,7 +10,7 @@ API_TOKEN = os.getenv("API_TOKEN", "")
 app = FastAPI(title=APP_NAME)
 
 ITEMS = [
-    {"id": 1, "name": "prezentacia"},
+    {"id": 1, "name": "alpha"},
     {"id": 2, "name": "beta"},
     {"id": 3, "name": "delta"},
 ]
