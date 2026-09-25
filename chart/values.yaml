@@ -1,8 +1,8 @@
 backend:
   image:
     repository: ghcr.io/infurox/aspecta-backend
-    tag: aaa2f184e1a0bb4c7613cde24f4923821eec3a70
+    tag: 279e274cd89b4fdd824def381e9d17775d08a5e8
 frontend:
   image:
     repository: ghcr.io/infurox/aspecta-frontend
-    tag: aaa2f184e1a0bb4c7613cde24f4923821eec3a70
+    tag: 279e274cd89b4fdd824def381e9d17775d08a5e8
